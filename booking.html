@@ -74,14 +74,28 @@ button:hover {
 
   <form onsubmit="handleBooking(event)">
     
-  <label>Your Name</label>
-  <input type="text" required>
+<label>Your Name</label>
+<input type="text" required>
 
-  <label>Pickup Date</label>
-  <input type="date" required>
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter your mobile number" required>
 
-  <label>Return Date</label>
-  <input type="date" required>
+<label>Pickup Location</label>
+<input type="text" placeholder="Enter pickup location" required>
+
+<label>Drop Location</label>
+<input type="text" placeholder="Enter drop location" required>
+
+<label>Pickup Date</label>
+<input type="date" required>
+
+<label>Return Date</label>
+<input type="date" required>
+<label>Need Driver?</label>
+<select required>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
 
   <button type="submit">Book Now</button>
 </form>
