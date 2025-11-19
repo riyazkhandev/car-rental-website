@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff8f0;
+  color: #333;
+  text-align: center;
+}
+
+.header-btn {
+  margin-top: 60px;
+}
+
+.header-btn a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 10px;
+  background: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.header-btn a:hover {
+  background: #e65c00;
+  transform: scale(1.05);
+}
+
+/* Popup form */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(255, 136, 0, 0.3);
+  width: 300px;
+  position: relative;
+  text-align: center;
+}
+
+.popup-box h2 {
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.popup-box form input {
+  width: 90%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.popup-box form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.popup-box form button:hover {
+  background: #e65c00;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}

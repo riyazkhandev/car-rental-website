@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff7ec;
+}
+
+.container {
+  max-width: 500px;
+  width: 90%;
+  background: #fff;
+  margin: 20px auto;  /* FIXED */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.2);
+}
+
+h2 {
+  color: #ff6600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e55c00;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Car Booking Form</h2>
+
+  <form onsubmit="handleBooking(event)">
+    
+  <label>Your Name</label>
+  <input type="text" required>
+
+  <label>Pickup Date</label>
+  <input type="date" required>
+
+  <label>Return Date</label>
+  <input type="date" required>
+
+  <button type="submit">Book Now</button>
+</form>
+
+</div>
+<script>
+function handleBooking(event) {
+  event.preventDefault();
+
+  alert("✅ Booking Successful! Your car is reserved."); 
+
+  setTimeout(() => {
+    window.location.href = "index.html"; 
+  }, 500);
+}
+</script>
+
+</body>
+</html>

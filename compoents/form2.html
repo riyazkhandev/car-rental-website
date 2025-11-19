@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up & Sign In</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* ==== HEADER BUTTONS ==== */
+    .header-btn {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .header-btn a {
+      text-decoration: none;
+      background: #ff6600;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 6px;
+      margin: 0 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .header-btn a:hover {
+      background: #e65c00;
+      transform: scale(1.05);
+    }
+
+    /* ==== BACKGROUND OVERLAY ==== */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    /* ==== FORM BOX ==== */
+    .form-box {
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(255, 136, 0, 0.25);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .form-box h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .form-box button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .form-box button:hover {
+      background: #e65c00;
+      transform: scale(1.03);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #ff6600;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER BUTTONS -->
+  <div class="header-btn">
+    <a href="#" class="sign-up">Sign Up</a>
+    <a href="#" class="sign-in">Sign In</a>
+  </div>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay">
+
+    <!-- SIGN UP FORM -->
+    <div class="form-box" id="signupForm">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Create Account</button>
+      <button class="close-btn" onclick="closeForm()">Close</button>
+    </div>
+
+    <!-- SIGN IN FORM -->
+    <div class="form-box" id="signinForm">
+      <h2>Sign In</h2>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <button class="close-btn" onclick="closeForm()">Close</button>
+    </div>
+
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const signUpBtn = document.querySelector('.sign-up');
+    const signInBtn = document.querySelector('.sign-in');
+    const signUpForm = document.getElementById('signupForm');
+    const signInForm = document.getElementById('signinForm');
+
+    // open sign-up
+    signUpBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.classList.add('active');
+      signUpForm.style.display = 'block';
+      signInForm.style.display = 'none';
+    });
+
+    // open sign-in
+    signInBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.classList.add('active');
+      signInForm.style.display = 'block';
+      signUpForm.style.display = 'none';
+    });
+
+    // close all
+    function closeForm() {
+      overlay.classList.remove('active');
+      signUpForm.style.display = 'none';
+      signInForm.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
